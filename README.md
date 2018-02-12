@@ -1,6 +1,10 @@
 # Chat :mailbox:
 
-Simples chat feito em nodejs utilizando socket.io.
+Simples chat feito em NodeJs utilizando Socket.io.
+
+[Demonstração aqui! :envelope:](http://luigihenrick.ddns.net:8080/)
+
+:white_check_mark: Dica: Teste utilizando mais de uma aba do navegador ou com um amigo para ver as mensagens sem atualizar a página!
 
 ## Como subir o servidor
 
@@ -19,5 +23,3 @@ Servidor rodando na porta 8080...
 ```
 
 5. Acesse http://localhost:8080/ e aproveite! :smile:
-
-:white_check_mark: Dica: Teste utilizando mais de uma aba do navegador ou com um amigo para ver as mensagens sem atualizar a página!
