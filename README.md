@@ -1,4 +1,4 @@
-# Chat :iphone:
+# Chat :mailbox:
 
 Simples chat feito em nodejs utilizando socket.io.
 
