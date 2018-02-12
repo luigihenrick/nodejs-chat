@@ -2,7 +2,7 @@
 
 Simples chat feito em NodeJs utilizando Socket.io.
 
-[Demonstração aqui! :envelope:](http://luigihenrick.ddns.net:8080/)
+[Demonstração aqui! :speech_balloon:](http://luigihenrick.ddns.net:8080/)
 
 :white_check_mark: Dica: Teste utilizando mais de uma aba do navegador ou com um amigo para ver as mensagens sem atualizar a página!
 
