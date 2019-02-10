@@ -2,25 +2,25 @@ var express = require("express");
 var app = express();
 var server = require("http").createServer(app);
 var io = require("socket.io").listen(server);
+var port = process.env.PORT || 8080;
 
 users = [];
 connections = [];
 
-console.log("Servidor rodando na porta 8080...")
+server.listen(port);
+console.log(`Servidor rodando na porta ${port}...`);
 
-server.listen(8080);
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html')
 });
 
 io.sockets.on('connection', function(socket){
     connections.push(socket);
-    console.log("Conectado: %s sockets conectados", connections.length);
+    console.log(`Conectado: ${connections.length} sockets conectados`);
 
-    // Desconectar
     socket.on('disconnect', function(data){
         connections.splice(connections.indexOf(socket), 1);
-        console.log("Desconectado: %s sockets conectados", connections.length);
+        console.log(`Desconectado: ${connections.length} sockets conectados`);
         if(!socket.username){
             return;
         }
@@ -28,14 +28,10 @@ io.sockets.on('connection', function(socket){
         updateUsernames();
     });
 
-    // Enviar Mensagem
-
     socket.on('send message', function(data){
         io.sockets.emit('new message', {msg: data, user: socket.username});
-        console.log(socket.username + ': ' + data);
+        console.log(`${socket.username}: ${data}`);
     });
-
-    // Novo Usuario
 
     socket.on('new user', function(data, callback){
         callback(true);
